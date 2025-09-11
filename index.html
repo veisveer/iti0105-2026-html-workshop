@@ -1,0 +1,78 @@
+<html lang="et"> <!-- Mis keeles dokument on -->
+
+<head>
+    <meta charset="UTF-8">    <!-- Tähestik, mida kasutame  -->
+    <link rel="stylesheet" type="text/css" href="main.css"/> <!-- Ühendus üldise css ja meie lehe vahel -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css"> <!-- Ühendus lehekülje css ja meie lehe vahel -->
+    <title>Avaleht</title> <!-- Veebilehe pealkiri, mida näidatakse brauseri tab-is -->
+</head>
+
+<body>
+
+<!-- Navigatsioonirida, millega navigeeritakse lehekülgede vahel -->
+
+<div id="navbar">
+    <ul>
+        <li><a class="nav-bar" href="index.html"> Avaleht </a></li>
+        <li style="float: right"><a class="nav-bar" href="team.html"> Tiim </a></li>
+        <li style="float: right"><a class="nav-bar" href="nelijarve.html"> Nelijärve bingo </a></li>
+    </ul>
+</div>
+
+<!-- Pealkiri, pilt ja väike kirjeldus -->
+
+<div class="container" style="padding: 1em">
+    <div id="textBox">
+        <h1>Nimetus</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Curabitur eget lectus mi. Donec lorem magna,
+            elementum ac dui in, posuere pharetra odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Curabitur eget lectus mi. Donec lorem magna, elementum ac dui in, posuere pharetra odio.</p>
+    </div>
+    <img id="photo" src="images/img.png">
+</div>
+
+<!-- Lõbusad faktid -->
+
+<div class="container">
+    <div class="card">
+        <!-- Tee see osa ise! -->
+        <img class="icon" src="images/question.png"/>
+        <h1>Kas teadsid, et </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a odio vel lorem congue
+            facilisis.</p>
+    </div>
+    <div class="card">
+        <!-- Tee see osa ise! -->
+    </div>
+    <div class="card">
+        <!-- Tee see osa ise! -->
+    </div>
+</div>
+
+<!-- Video -->
+
+<div class="container" style="flex-flow: column">
+    <iframe id="video" src="https://www.youtube.com/embed/WLT7TDGzXGU?si=z5_UTSHfVFkCDm6X"></iframe>
+    <!-- max-width paneb ette piiri, et kui pikk võib tekst olla -->
+    <!-- saame kirjutada css-i ka html dokumenti style="" sisse -->
+    <p style="max-width: 55em">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a odio vel lorem congue
+        facilisis. Praesent consequat leo arcu, in gravida erat fringilla in. Pellentesque dictum accumsan leo, in
+        consectetur eros malesuada quis. Ut congue turpis eget interdum egestas. </p>
+</div>
+
+<!-- Lisainfo -->
+
+<div>
+    <h1>Lisainfo</h1>
+    <div class="container">
+        <!-- Tee see osa ise! -->
+    </div>
+</div>
+
+<!-- Nupp, millele tuleb lisada funktsionaalsus -->
+
+<button>Kliki mind!</button>
+
+</body>
+
+</html>

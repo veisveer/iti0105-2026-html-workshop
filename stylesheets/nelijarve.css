@@ -1,0 +1,48 @@
+/* . viitame klassile ehk HTML koodis on see class="bingo-card" */
+.bingo-card {
+    height: 12.5vw; /* vw ehk viewport width tähendab, et võetakse nii mitu protsenti, olenedes, kui lai on ekraan */
+    width: 12.5vw; /* Andakse elemendile kindel laius */
+    display: flex; /* Flexiga saame teha dünaamilise veebilehe */
+    align-items: center; /* Elemendid joondatakse horisontaalselt lehe keskele*/
+    justify-content: center; /* Joondame elemendid vertikaalselt keskele */
+    word-break: break-all; /* Kui tekst läheb üle kasti, siis tõstame teisele reale*/
+    text-align: center; /* Tekst on joondatud keskele */
+    cursor: pointer; /* Muudame kursorit */
+    transition: transform 1s; /* Kui kaua võtab animatsioon aega */
+    transform-style: preserve-3d;
+}
+
+.bingo-card-front {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-weight: bold; /* Kiri on boldina */
+    backface-visibility: hidden; /* Kui pööradakse elementi, siis peidetakse elemendi tagumine osa ära */
+    background: #D9D9D9; /* Taustavärv */
+    align-items: center;
+    justify-content: center;
+}
+
+.bingo-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg); /* Pöörame elementi y teljel */
+    border: 1px solid #CCC;
+}
+
+.bingo-card.is_flipped {
+    transform: rotateY(-180deg);
+}
+
+img {
+    max-height: 12.5vw; /* Elemendi maksimaalne lubatud laius */
+    max-width: 12.5vw;
+}
