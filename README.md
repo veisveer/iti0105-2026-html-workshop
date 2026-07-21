@@ -6,7 +6,7 @@ Tiimi kooseis:
 
 Link lehele: 
 
-Kuidas antud mall välja näeb? [https://iti0105-2025.pages.taltech.ee/iti0105-2025-html-workshop](https://iti0105-2025.pages.taltech.ee/iti0105-2025-html-workshop)
+Kuidas antud mall välja näeb? [https://nelijarve-workshop-iti0105-2026-366393bd8911bbf4ec1566f78f3c741.pages.taltech.ee](https://nelijarve-workshop-iti0105-2026-366393bd8911bbf4ec1566f78f3c741.pages.taltech.ee)
 
 ## Mis on töötoa eesmärk?
 
@@ -15,7 +15,7 @@ Töötoa eesmärk on õppida lugema ja kirjutama lihtsat HTML ja CSS.
 Töötoa edukaks läbimiseks tuleb teha kolm vaadet:
 * Avaleht, kus peate kirjutama milleski, mida teid kõiki seob. Olgu see, et teil on ühine lemmik toit, lemmik mäng või lemmik õppeaine;
 * Bingos tuleb sooritada erinevad väljakutsed;
-* Tiimi lehel koostage oma tiimiliikmete visiitkaart, kus on kirjas nimi, kust koolis tuli ja lõbus fakt enda kohta.
+* Tiimi lehel koostage oma tiimiliikmete visiitkaart, kus on kirjas nimi, kust koolist tuli ja lõbus fakt enda kohta.
 
 ## Kuidas malli kasutada?
 Vajuta "Fork" sümbolile
