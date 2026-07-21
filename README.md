@@ -21,7 +21,7 @@ Töötoa edukaks läbimiseks tuleb teha kolm vaadet:
 Vajuta "Fork" sümbolile
 ![/readme-images/forking-1.png](/readme-images/forking-1.png)
 
-Project slugi lisa "iti0105-2025", kui seda juba ei ole, ning vajuta branches to include'i alt "only the default branch" ning siis vajuta "Fork project".
+Project slugi lisa "iti0105-2026", kui seda juba ei ole, ning vajuta branches to include'i alt "only the default branch" ning siis vajuta "Fork project".
 ![/readme-images/forking-2.png](/readme-images/forking-2.png)
 
 Projekt natukene laeb ja siis avaneb sinu projektide juures.
@@ -55,4 +55,4 @@ Natukene kannatust ja peaksid nägema oma ilusat veebilehte.
 
 ## Materjalid ja lingid
 - [Juhendi veebileht](https://htmldoc.pages.taltech.ee/)
-- [Slaidid](https://docs.google.com/presentation/d/1XrKfKINH3M0duD0xhVhj8CRxyiPI99De/edit?usp=sharing&ouid=107165748667253450456&rtpof=true&sd=true) 
+- [Slaidid](https://docs.google.com/presentation/d/1xHr7filHb7PpoIB9LI6I62zVvtE00KXj/edit?usp=sharing&ouid=118376492170979634848&rtpof=true&sd=true) 
