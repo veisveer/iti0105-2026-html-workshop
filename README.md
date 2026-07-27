@@ -57,4 +57,4 @@ Natukene kannatust ja peaksid nägema oma ilusat veebilehte.
 
 ## Materjalid ja lingid
 - [Juhendi veebileht](https://htmldoc.pages.taltech.ee/)
-- [Slaidid](https://docs.google.com/presentation/d/1xHr7filHb7PpoIB9LI6I62zVvtE00KXj/edit?usp=sharing&ouid=118376492170979634848&rtpof=true&sd=true) 
+- [Slaidid](https://docs.google.com/presentation/d/1cFXliSjoDYEAb-tOUTrdYVOvaTpZx89w/edit?usp=sharing&ouid=110658709438083283327&rtpof=true&sd=true) 
