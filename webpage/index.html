@@ -3,96 +3,88 @@
   <head lang="et">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avaleht</title>
+    <title>DOOM 1993</title>
     <link rel="stylesheet" href="./stylesheets/index.css" />
+    <link rel="stylesheet" href="./stylesheets/doom.css" />
   </head>
-  <body>
+  <body class="doom-body">
     <!-- Navigatsiooniriba -->
     <nav>
-      <ul>
-        <li><a href="index.html"> Avaleht </a></li>
-        <li><a href="bingo.html">Bingo</a></li>
-        <li><a href="team.html"> Tiim </a></li>
-      </ul>
+      <a href="bingo.html">Bingo</a>
+      <a href="team.html">Tiim</a>
     </nav>
     <!-- Nimetus -->
     <section>
       <div>
-        <h1>Nimetus</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu nisi
-          fermentum, tempus nibh ut, interdum purus. Sed eget lacus sit amet
-          orci vulputate tincidunt. Proin rutrum urna tortor, eu efficitur
-          turpis malesuada vitae. Phasellus facilisis elit eu nisi cursus,
-          ultricies sodales lectus euismod. Aliquam et nunc eu odio varius
-          tincidunt. Morbi vel laoreet lectus. Sed ligula urna, bibendum sit
-          amet lorem eget, porttitor bibendum enim. In id velit et ligula
-          pharetra lacinia. Vestibulum eu ultricies erat.
+        <h1 class="doom-h1">
+          <a href="https://fontmeme.com/doom-font/">
+            <img src="https://fontmeme.com/permalink/260918/0235e575.png" alt="doom-font" border="0" class ="doom-h1-img" />
+          </a>
+        </h1>
+        <img src="./images/doomguy.gif" />
+        <p class="doom-description">
+          Doom is a 1993 first-person shooter game developed and published by id Software for MS-DOS. It is the first installment in the Doom franchise. The player assumes the role of a space marine, later unofficially referred to as Doomguy, fighting through hordes of undead humans and invading demons. The game begins on the moons of Mars and finishes in hell, with the player traversing each level to find its exit or defeat its final boss. It is an early example of 3D graphics in video games, and has enemies and objects as 2D images, a technique sometimes referred to as 2.5D graphics.
         </p>
       </div>
-      <img src="./images/img.png" />
     </section>
     <!-- Faktide kaardid -->
-    <section>
+    <section class="doom-facts">
       <article>
-        <img />
-        <h2>Kas teadsid, et ...</h2>
+        <img src="images/fast.gif"/>
+        <h2>50-90MPH</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu nisi
-          fermentum, tempus nibh ut, interdum purus. Sed eget lacus sit amet
-          orci vulputate tincidunt. Proin rutrum urna tortor, eu efficitur
-          turpis malesuada vitae. Phasellus facilisis elit eu nisi cursus,
-          ultricies sodales lectus euismod
+          Doom Guy runs approximately 50-90MPH in the classic games.
         </p>
       </article>
       <article>
-        <img />
-        <h2>Kas teadsid, et ...</h2>
+        <img src="images/greenandpissed.gif"/>
+        <h2>Green and Pissed</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu nisi
-          fermentum, tempus nibh ut, interdum purus. Sed eget lacus sit amet
-          orci vulputate tincidunt. Proin rutrum urna tortor, eu efficitur
-          turpis malesuada vitae. Phasellus facilisis elit eu nisi cursus,
-          ultricies sodales lectus euismod
+          The working title for the original was “Green and Pissed” and you used to be able to find Usenet posts from the crew referring to the game as that around late 1992 / early 1993.
         </p>
       </article>
       <article>
-        <img />
-        <h2>Kas teadsid, et ...</h2>
+        <img src="images/evildead.gif"/>
+        <h2>Evil Dead</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu nisi
-          fermentum, tempus nibh ut, interdum purus. Sed eget lacus sit amet
-          orci vulputate tincidunt. Proin rutrum urna tortor, eu efficitur
-          turpis malesuada vitae. Phasellus facilisis elit eu nisi cursus,
-          ultricies sodales lectus euismod
+          The chainsaw and super shotgun weapons in the game were inspired by the Evil Dead series of movies.
         </p>
       </article>
     </section>
     <!-- Video -->
-    <section>
+    <section class="doom-video">
       <iframe
-        src="https://www.youtube.com/embed/IxX_QHay02M?si=eOf_xVylMgon2HdF"
-        title="YouTube video player"
+        src="https://youtube.com/embed/MnqLJpgq7jc"
+        title="DOOM E1M1"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
+        style=""
       ></iframe>
-    </section>
-    <!-- Lisainfo -->
-    <section>
-      <h2>Lisainfo</h2>
       <div>
-        <a href="https://et.wikipedia.org/wiki/Vikipeedia:Esileht"
-          ><img src="./images/world-wide-web.png"
-        /></a>
-        <a href="https://et.wikipedia.org/wiki/Vikipeedia:Esileht"
-          ><img src="./images/world-wide-web.png"
-        /></a>
-        <a href="https://et.wikipedia.org/wiki/Vikipeedia:Esileht"
-          ><img src="./images/world-wide-web.png"
-        /></a>
+        <div style="padding: 100px">
+          <a href="https://en.wikipedia.org/wiki/Doom_(1993_video_game)"
+          ><img src="./images/coverart.jpg"
+          /></a>
+          <a href="https://doom.fandom.com/wiki/Doom_Wiki"
+          ><img src="./images/cacodemon.webp"
+          /></a>
+          <a href="https://doomwiki.org/wiki/Doom"
+          ><img src="./images/marine.webp" style="width: 200px;
+          /></a>
+        </div>
       </div>
     </section>
+
+    <div class="hand-fixed">
+        <!-- static hand image on the bottom of the page always -->
+        <img src="./images/hand.png" alt="hand" class="hand_image"/>
+    </div>
+    <div class="doom-fixed">
+      <!-- static doom image on the bottom of the page always -->
+      <img src="./images/doom.png" alt="doom" class="doom_image"/>
+    </div>
+    <script type="text/javascript" src="./doom.js"></script>
   </body>
 </html>
