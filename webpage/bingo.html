@@ -22,54 +22,217 @@
         </nav>
         <!-- Bingo -->
         <main>
-            <h1>Tiimi 14 <span>BINGO</span></h1>
+            <div class="window-header">
+                <div class="line-container">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
 
-            <!-- Esimesed kolm bingokaarti -->
-            <section>
-                <article>
-                    <p>Tehke tiimiga muusikavideo eurolaulule</p>
-                </article>
+                <h1>Tiimi 14 <span>BINGO</span></h1>
 
-                <article>
-                    <p>Lisa oma tiimi hümn audiona!</p>
-                </article>
+                <div class="line-container">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
 
-                <article>
-                    <p>Lisa veebileht, mida õppetöös kõige enam külastad</p>
-                </article>
-            </section>
-            <!-- Järgmised kolm bingokaarti -->
-            <section>
-                <article>
-                    <p>
-                        Lisa GIF, mis kujutab iga tiimiliikme emotsioone pärast
-                        kolmandat õppenädalat
-                    </p>
-                </article>
+            <section class="bingo-grid">
+                <button class="card-container" onclick="flipCard('black-vid')">
+                    <div id="black-vid">
+                        <p>Muusika video</p>
+                    </div>
+                    <video width="160" height="100" controls>
+                        <source src="./images/euro-vid.mov" />
+                    </video>
+                </button>
 
-                <article>
-                    <p>Vabaväli</p>
-                </article>
+                <button class="card-container" onclick="flipCard('black-hymn')">
+                    <div id="black-hymn">
+                        <p>Tiimi hümn</p>
+                    </div>
+                    <audio controls style="width: 150px">
+                        <source src="./images/hymn.mp3" type="audio/mpeg" />
+                    </audio>
+                    Nelijärve kontsert
+                </button>
 
-                <article>
-                    <p>Tehke Nelijärve toast review.</p>
-                </article>
-            </section>
+                <button class="card-container" onclick="flipCard('black-site')">
+                    <div id="black-site">
+                        <p>Külastatud veebileht</p>
+                    </div>
+                    https://moodle.taltech.ee/?lang=et
+                </button>
 
-            <!-- Viimased kolm bingokaarti -->
-            <section>
-                <article>
-                    <p>Tehke (abi)õppejõuga foto.</p>
-                </article>
+                <button class="card-container" onclick="flipCard('black-gif')">
+                    <div id="black-gif">
+                        <p>3. nädala GIF</p>
+                    </div>
+                    <img
+                        src="./images/chill-gif.gif"
+                        alt="chill guy gif"
+                        style="width: 150px; height: 150px"
+                    />
+                </button>
 
-                <article>
-                    <p>Rakendus, mis kõigi tiimiliikmete telefonis on</p>
-                </article>
+                <button class="card-container" id="free-space">Vabaväli</button>
 
-                <article>
-                    <p>Mängige kivi-paber-käärid. Võitja pilt lisada siia.</p>
-                </article>
+                <button
+                    class="card-container"
+                    onclick="flipCard('black-review')"
+                >
+                    <div id="black-review">
+                        <p>Toa review</p>
+                    </div>
+                    <video width="160" height="100" controls>
+                        <source src="./images/review.MOV" />
+                    </video>
+                </button>
+
+                <button
+                    class="card-container"
+                    onclick="flipCard('black-photo')"
+                >
+                    <div id="black-photo">
+                        <p>Foto abiõppejõuga</p>
+                    </div>
+                    <img
+                        src="./images/tiimi-pic.JPG"
+                        alt="Team pic"
+                        style="width: 160px"
+                    />
+                </button>
+
+                <button class="card-container" onclick="flipCard('black-app')">
+                    <div id="black-app">
+                        <p>Popikas rakendus</p>
+                    </div>
+                    Instagram
+                </button>
+
+                <button class="card-container" onclick="flipCard('black-rps')">
+                    <div id="black-rps">
+                        <p>Kivi-paber-käärid</p>
+                    </div>
+                    <img
+                        src="./images/tuff-pic.jpg"
+                        alt="Team pic"
+                        style="width: 120px"
+                    />
+                </button>
             </section>
         </main>
+
+        <div class="news-behind-main">
+            <div class="news-cover"></div>
+            <div class="window-header">
+                <div class="line-container">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+
+                <h1>Uudised</h1>
+
+                <div class="line-container">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <h1>Miks on Tartu Ülikool Taltechist kehvem?</h1>
+            <p>Huviline Reporter</p>
+            <p>
+                Nagu aegase algusest on teada, on TalTech Tartu Ülikoolist
+                kordades parem. Nüüd oleme aga Nelijärvel, et selgitada välja
+                miks. Põhjus on aga hoopis selgem, kui algselt arvasime.
+            </p>
+        </div>
+
+        <div class="news-behind-main-2">
+            <div class="news-cover"></div>
+            <div class="window-header">
+                <div class="line-container">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+
+                <h1>Uudised</h1>
+
+                <div class="line-container">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <h1>Ago Luberg on taas parim õppejõud</h1>
+            <p>Tuff Tudeng</p>
+            <p>
+                Ago Luberg on juba aegade algusest olnud tudengite lemmik. Tema
+                võidutee jätkub.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus venenatis malesuada sollicitudin. Nulla euismod
+                pulvinar ex. Vestibulum diam nulla, hendrerit eget libero nec,
+                dictum malesuada nunc. Donec et metus turpis. Curabitur luctus
+                dolor non dolor gravida, et condimentum nisl ultrices. Cras ac
+                urna at quam pretium varius. Vivamus non ipsum aliquam, euismod
+                massa sed, venenatis sapien. Nullam porta sed lectus id dictum.
+                Ut venenatis auctor mollis. Mauris sed lectus id lacus porta
+                vulputate sodales molestie nisl. Aenean finibus metus in commodo
+                dignissim. Orci varius natoque penatibus et magnis dis
+            </p>
+            <p>
+                parturient montes, nascetur ridiculus mus. Aliquam mattis justo
+                dui, nec posuere tortor tincidunt ac. Etiam quis tortor ac purus
+                tincidunt commodo sit amet facilisis tellus. Phasellus id diam
+                facilisis elit facilisis ultrices. Nunc venenatis sodales ex.
+                Maecenas sed faucibus nisl. Sed vitae ex eget est bibendum
+                tempus. Etiam id nibh sed risus pulvinar efficitur. Maecenas sed
+                nunc vel arcu tempus sagittis nec in diam. Nunc eu leo rhoncus,
+                congue est eget, tempor dui. Orci varius natoque penatibus et
+                magnis dis parturient montes, nascetur ridiculus mus.
+                Suspendisse potenti. Fusce fringilla tristique est sit amet
+                fermentum. Nulla semper nisi vel purus tempor, eget ornare
+                mauris porta. Phasellus convallis, est ut suscipit ultrices,
+                turpis.
+            </p>
+        </div>
+
+        <div class="file-column">
+            <a class="file-and-name" href="index.html">
+                <img src="images/file.png" alt="file icon" />
+                <span>Avaleht</span>
+            </a>
+            <a class="file-and-name bingo-file" href="bingo.html">
+                <img src="images/file.png" alt="file icon" />
+                <span>Bingo</span>
+            </a>
+            <a class="file-and-name" href="team.html">
+                <img src="images/file.png" alt="file icon" />
+                <span>Tiim</span>
+            </a>
+        </div>
+
+        <div class="file-and-name trash-icon">
+            <img src="images/trash.png" alt="file icon" />
+            <span>Trash</span>
+        </div>
     </body>
+    <script src="bingo-script.js" type="text/javascript"></script>
 </html>
