@@ -1,3 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.geist-pixel-fein,
+nav ul li,
+h3 {
+    font-family: "Geist Pixel", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "ELSH" 0;
+  font-size: large;
+}
+
+h2 {
+    font-family: "Geist Pixel", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "ELSH" 0;
+}
+
+p {
+    font-family: "Geist Pixel", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "ELSH" 0;
+}
+
 body {
-  background-color: aquamarine;
+    background-color: white;
+    cursor: url("webpage/images/cursor2.png"), auto;
+
+}
+
+nav {
+    width: 100%;
+    border-bottom: 1.5px solid black;
+    padding: 4px 1rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li {
+    list-style: none;
+    height: 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: gray;
+}
+
+nav ul li img {
+    width: 20px;
+}
+
+main {
+    width: 60dvw;
+    margin: 4rem auto;
+}
+
+.pilt {
+  width: 15vw
+}
+
+
+article{
+  text-align: center;
+  padding-bottom: 2vh;
+  padding-top: 1vh;
+  border: black solid;
+  margin: 1vh;
+      cursor: url("webpage/images/cursor2.png"), auto;
+
+
+}
+
+article:hover{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
