@@ -35,7 +35,7 @@ p {
 
 body {
     background-color: white;
-    cursor: url("webpage/images/cursor2.png"), auto;
+    cursor: url("../images/cursor3.webp"), auto;
 
 }
 
@@ -88,11 +88,27 @@ article{
   padding-top: 1vh;
   border: black solid;
   margin: 1vh;
-      cursor: url("webpage/images/cursor2.png"), auto;
+      cursor: url("../images/cursor3.webp"), auto;
 
 
 }
 
 article:hover{
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+article{
+animation: fade-in-up 0.6s ease forwards;
+}
+article:nth-of-type(1) { animation-delay: 0.1s; }
+article:nth-of-type(2) { animation-delay: 0.3s; }
+article:nth-of-type(3) { animation-delay: 0.5s; }
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
