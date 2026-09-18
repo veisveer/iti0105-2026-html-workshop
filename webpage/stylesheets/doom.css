@@ -20,14 +20,16 @@
 .doom-body::before {
 	content: "";
 	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	inset: -20% 0;
 	pointer-events: none;
 	z-index: 9999;
-	background: none;
-	opacity: 0;
+	background:
+		linear-gradient(to bottom, transparent 42%, rgba(255, 244, 205, 0.045) 49%, transparent 57%),
+		repeating-linear-gradient(to bottom, rgba(5, 2, 1, 0.18) 0, rgba(5, 2, 1, 0.18) 1px, transparent 1px, transparent 4px);
+	background-size: 100% 38%, 100% 4px;
+	mix-blend-mode: multiply;
+	opacity: 0.42;
+	animation: scanline-roll 9s linear infinite, crt-flicker 4.5s steps(2, end) infinite;
 }
 
 .doom-body::after {
@@ -41,6 +43,17 @@
 	z-index: 9998;
 	background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 55%, rgba(0, 0, 0, 0.28) 100%);
 	animation: vhs-jitter 0.14s steps(2, end) infinite;
+}
+
+@keyframes scanline-roll {
+	from { background-position: 0 -40vh, 0 0; }
+	to { background-position: 0 120vh, 0 4px; }
+}
+
+@keyframes crt-flicker {
+	0%, 93%, 100% { opacity: 0.42; }
+	94% { opacity: 0.34; }
+	96% { opacity: 0.46; }
 }
 
 @keyframes doom-map-scroll {
@@ -97,6 +110,88 @@
 	height: auto;
 	pointer-events: none;
 	z-index: 21;
+}
+
+.bullet-tracer {
+	position: fixed;
+	z-index: 19;
+	width: var(--tracer-length);
+	height: 5px;
+	background: linear-gradient(to right, white, #fff7a1 22%, #ff7a24 62%, transparent);
+	box-shadow: 0 0 8px #ff6a00, 0 0 16px #ffe600;
+	transform: rotate(var(--tracer-angle));
+	transform-origin: left center;
+	pointer-events: none;
+	animation: bullet-fire 110ms linear forwards;
+}
+
+.bullet-impact {
+	position: fixed;
+	z-index: 18;
+	width: 13px;
+	height: 13px;
+	border: 3px solid #1b0c08;
+	border-radius: 50%;
+	background: radial-gradient(circle, #060303 0 28%, #63311f 30% 52%, transparent 55%);
+	box-shadow: 0 0 0 2px rgba(255, 214, 78, 0.35);
+	transform: translate(-50%, -50%) rotate(var(--impact-rotation));
+	pointer-events: none;
+	animation: impact-pop 180ms steps(3, end);
+}
+
+.muzzle-flash {
+	position: fixed;
+	z-index: 22;
+	width: 52px;
+	height: 52px;
+	background: radial-gradient(circle, white 0 8%, #ffe600 10% 28%, #ff6a00 31% 50%, transparent 54%);
+	clip-path: polygon(50% 0, 61% 31%, 88% 12%, 70% 42%, 100% 50%, 68% 59%, 88% 89%, 59% 70%, 50% 100%, 41% 70%, 11% 88%, 31% 59%, 0 50%, 31% 41%, 12% 11%, 41% 31%);
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	animation: muzzle-pop 100ms steps(2, end) forwards;
+}
+
+.impact-spark {
+	position: fixed;
+	z-index: 20;
+	width: 5px;
+	height: 18px;
+	background: linear-gradient(#fff, #ffe600 35%, #ff5a22 70%, transparent);
+	box-shadow: 0 0 6px #ff6a00;
+	transform: translate(-50%, -50%) rotate(var(--spark-angle));
+	transform-origin: center bottom;
+	pointer-events: none;
+	animation: spark-burst 260ms ease-out forwards;
+}
+
+.hand_image.gun-recoil {
+	animation: gun-kick 110ms steps(2, end);
+}
+
+@keyframes bullet-fire {
+	from { opacity: 1; scale: 0.15 1; }
+	to { opacity: 0; scale: 1 0.35; }
+}
+
+@keyframes impact-pop {
+	0% { opacity: 0; scale: 2.2; }
+	55% { opacity: 1; scale: 1.25; }
+	100% { opacity: 1; scale: 1; }
+}
+
+@keyframes muzzle-pop {
+	0% { opacity: 1; scale: 0.5; rotate: 0deg; }
+	100% { opacity: 0; scale: 1.5; rotate: 25deg; }
+}
+
+@keyframes spark-burst {
+	0% { opacity: 1; translate: 0 0; scale: 1; }
+	100% { opacity: 0; translate: var(--spark-x) var(--spark-y); scale: 0.3; }
+}
+
+@keyframes gun-kick {
+	0%, 100% { transform: translate(-50%, -50%); }
+	50% { transform: translate(-50%, -44%) rotate(1deg); }
 }
 
 .hand_fixed {
@@ -196,6 +291,157 @@
 .doom-facts:nth-child(2) > img {
 	height: 100%;
 	width: auto;
+}
+
+.doom-map {
+	width: min(1200px, 100%);
+	margin: 28px auto 36px;
+	background:
+		linear-gradient(rgba(28, 12, 7, 0.43), rgba(28, 12, 7, 0.54)),
+		url("../images/doom-map-clean.png") center / cover no-repeat,
+		#4b2d22;
+	border: 10px solid yellow;
+	color: white;
+	box-shadow: 10px 10px 0 rgba(85, 0, 0, 0.85);
+	overflow: hidden;
+}
+
+.doom-map__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	gap: 20px;
+	padding: 18px 22px;
+	background: rgba(123, 22, 18, 0.9);
+	border-bottom: 3px solid #ff5a22;
+}
+
+.doom-map__header span,
+.doom-map__header p {
+	color: #ffe600;
+	font-size: 0.85rem;
+	letter-spacing: 0.16em;
+}
+
+.doom-map__header h2,
+.doom-map__header p {
+	margin: 0;
+}
+
+.doom-map__header h2 {
+	font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+	line-height: 1;
+}
+
+.doom-map__route {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(8, minmax(70px, 1fr));
+	grid-template-rows: 110px 90px;
+	align-items: center;
+	gap: 0;
+	margin: 0;
+	padding: 34px 30px 24px;
+	list-style: none;
+}
+
+.doom-map__route::before {
+	content: "";
+	position: absolute;
+	left: 7%;
+	right: 7%;
+	top: 87px;
+	height: 5px;
+	background: repeating-linear-gradient(90deg, #d1342d 0 24px, #ffe600 24px 30px);
+	box-shadow: 0 0 10px #d1342d;
+}
+
+.map-node {
+	position: relative;
+	z-index: 1;
+	justify-self: center;
+	width: 76px;
+	min-height: 62px;
+	padding: 9px 5px;
+	background: #20231c;
+	border: 4px solid #d1342d;
+	text-align: center;
+	box-shadow: 4px 4px 0 #000;
+	transition: transform 120ms steps(2, end), background 120ms steps(2, end);
+}
+
+.map-node:hover {
+	transform: translateY(-7px) rotate(-2deg);
+	background: #7b1612;
+}
+
+.map-node b,
+.map-node small {
+	display: block;
+}
+
+.map-node b {
+	color: #ffe600;
+	font-size: 1.05rem;
+}
+
+.map-node small {
+	margin-top: 3px;
+	font-family: Arial, sans-serif;
+	font-size: 0.65rem;
+	line-height: 1.1;
+}
+
+.map-node--1 {
+	border-color: #64e453;
+	animation: player-ping 1.4s steps(2, end) infinite;
+}
+
+.map-node--8 {
+	border-color: #ff5a22;
+}
+
+.map-node--secret {
+	grid-column: 3;
+	grid-row: 2;
+	border-color: #8f55ff;
+}
+
+.map-node--secret::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 100%;
+	width: 4px;
+	height: 48px;
+	background: repeating-linear-gradient(#8f55ff 0 8px, transparent 8px 13px);
+}
+
+.doom-map__legend {
+	display: flex;
+	justify-content: flex-end;
+	gap: 18px;
+	padding: 10px 20px;
+	background: rgba(0, 0, 0, 0.65);
+	font-size: 0.75rem;
+	letter-spacing: 0.09em;
+}
+
+.legend-dot {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	margin-right: 5px;
+	background: currentColor;
+}
+
+.legend-dot--start { color: #64e453; }
+.legend-dot--secret { color: #8f55ff; }
+.legend-dot--boss { color: #ff5a22; }
+
+@keyframes player-ping {
+	0%, 100% { box-shadow: 4px 4px 0 #000, 0 0 0 0 rgba(100, 228, 83, 0.8); }
+	50% { box-shadow: 4px 4px 0 #000, 0 0 0 9px rgba(100, 228, 83, 0); }
 }
 
 .doom-video {
@@ -335,6 +581,26 @@
 		grid-template-columns: 1fr;
 	}
 
+	.doom-map__route {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(3, 95px);
+	}
+
+	.doom-map__route::before {
+		inset: 80px 12% auto;
+		height: 100px;
+		background: none;
+		border-top: 5px dashed #d1342d;
+		border-right: 5px dashed #d1342d;
+		border-bottom: 5px dashed #d1342d;
+		box-shadow: none;
+	}
+
+	.map-node--secret {
+		grid-column: 3;
+		grid-row: 3;
+	}
+
 }
 
 @media (max-width: 520px) {
@@ -345,8 +611,45 @@
 
 	.doom-description,
 	.doom-facts article,
-	.doom-video > iframe {
+	.doom-video > iframe,
+	.doom-map {
 		border-width: 6px;
+	}
+
+	.doom-map__header {
+		display: block;
+		padding: 14px;
+	}
+
+	.doom-map__header p {
+		margin-top: 8px;
+	}
+
+	.doom-map__route {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(5, 90px);
+		padding: 20px 12px;
+	}
+
+	.doom-map__route::before {
+		top: 63px;
+		left: 25%;
+		right: 25%;
+		height: 270px;
+	}
+
+	.map-node--secret {
+		grid-column: 2;
+		grid-row: 5;
+	}
+
+	.map-node--secret::before {
+		display: none;
+	}
+
+	.doom-map__legend {
+		justify-content: center;
+		flex-wrap: wrap;
 	}
 
 	.doom-facts article {
@@ -370,16 +673,29 @@
 	.hand_image {
 		display: none;
 	}
+
+	.bullet-tracer,
+	.muzzle-flash,
+	.impact-spark {
+		display: none;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
 	.doom-body,
+	.doom-body::before,
 	.doom-body::after,
 	.doom-h1-img,
 	.doom-description,
 	.doom-facts article,
 	.doom-facts article::before,
-	.doom-video a img {
+	.doom-video a img,
+	.map-node--1,
+	.bullet-tracer,
+	.bullet-impact,
+	.muzzle-flash,
+	.impact-spark,
+	.hand_image.gun-recoil {
 		animation: none;
 	}
 }
