@@ -1,5 +1,5 @@
 * {
-	/*cursor: none;*/
+	box-sizing: border-box;
 }
 
 .doom-body {
@@ -11,9 +11,10 @@
 	animation: doom-map-scroll 25s linear infinite;
 	position: relative;
 	overflow-x: hidden;
-
-	margin-bottom: 300px;
-	margin-left: 16px;
+	margin: 0;
+	padding: 16px 16px clamp(120px, 12vw, 220px);
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+	letter-spacing: 0.025em;
 }
 
 .doom-body::before {
@@ -78,11 +79,13 @@
 	display: flex;
 	justify-content: center;
 	pointer-events: none;
+	z-index: 20;
 }
 
 .doom_image {
-	width: 100vw;
+	width: min(100vw, 1800px);
 	height: auto;
+	display: block;
 }
 
 .hand_image {
@@ -93,6 +96,7 @@
 	width: 200px;
 	height: auto;
 	pointer-events: none;
+	z-index: 21;
 }
 
 .hand_fixed {
@@ -101,14 +105,14 @@
 .doom-h1-img {
 	width: 100%;
 	height: auto;
+	filter: drop-shadow(0 7px 0 #7b1612);
+	animation: logo-pulse 2.6s steps(2, end) infinite;
 }
 
 .doom-h1 {
-	width: 500px;
+	width: min(500px, 82vw);
 	height: auto;
-	max-width: fit-content;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 24px auto;
 }
 
 .doom-description {
@@ -116,18 +120,23 @@
 	color: white;
 	border-radius: 0px;
 	border: 10px solid yellow;
-	padding: 25px;
+	padding: clamp(16px, 3vw, 25px);
 	font-weight: bold;
-	margin-left: 15%;
-	margin-right: 15%;
-
+	font-size: clamp(1rem, 1.5vw, 1.15rem);
+	line-height: 1.55;
+	width: min(900px, 100%);
+	margin: 0 auto;
+	font-family: "Arial Black", Arial, sans-serif;
+	animation: border-flicker 4s steps(1, end) infinite;
 }
 
 .doom-facts {
 	display: grid;
-	grid-template-columns: auto auto auto;
-	padding: 16px;
-	grid-column-gap: 16px;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	padding: 32px 0 16px;
+	gap: 16px;
+	width: min(1200px, 100%);
+	margin: 0 auto;
 }
 
 .doom-facts article {
@@ -138,11 +147,50 @@
 	font-weight: bold;
 	padding: 15px;
 
-	max-height: 500px;
+	min-width: 0;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 8px 8px 0 rgba(48, 0, 0, 0.75);
+	animation: demon-float 3.4s ease-in-out infinite;
+}
+
+.doom-facts article:nth-child(2) {
+	animation-delay: -1.1s;
+}
+
+.doom-facts article:nth-child(3) {
+	animation-delay: -2.2s;
+}
+
+.doom-facts article::before {
+	content: "☠";
+	position: absolute;
+	top: 4px;
+	right: 8px;
+	z-index: 2;
+	color: yellow;
+	font-size: 1.35rem;
+	text-shadow: 2px 2px #7b1612;
+	animation: skull-blink 1.8s steps(2, end) infinite;
 }
 
 .doom-facts img {
 	border-radius: 0px;
+	display: block;
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+	filter: saturate(1.25) contrast(1.08);
+	transition: filter 120ms steps(2, end), transform 120ms steps(2, end);
+}
+
+.doom-facts article:hover img {
+	filter: saturate(1.8) contrast(1.35) hue-rotate(-12deg);
+	transform: scale(1.035) translate(-2px, 1px);
+}
+
+.doom-facts article:hover {
+	animation: card-glitch 180ms steps(2, end) infinite;
 }
 
 .doom-facts:nth-child(2) > img {
@@ -151,18 +199,50 @@
 }
 
 .doom-video {
-	display: flex;
-	flex-direction: row;
-	margin-left: auto;
-	margin-right: auto;
-	height: 500px;
-	width: 100%;
-	padding: 8px;
+	display: grid;
+	grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+	gap: 16px;
+	margin: 16px auto 0;
+	width: min(1200px, 100%);
 }
 
 .doom-video > iframe {
-	width: 50%;
-	height: 500px;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	border: 10px solid yellow;
+}
+
+.doom-video > div > div {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.doom-video a,
+.doom-video a img {
+	display: block;
+	width: 100%;
+}
+
+.doom-video a img {
+	height: 180px;
+	object-fit: contain;
+	filter: saturate(1.15) drop-shadow(5px 5px 0 rgba(92, 0, 0, 0.8));
+	transition: transform 160ms steps(3, end), filter 160ms steps(3, end);
+}
+
+.doom-video a:nth-child(odd) img {
+	animation: relic-wobble 3s ease-in-out infinite;
+}
+
+.doom-video a:nth-child(even) img {
+	animation: relic-wobble 3s ease-in-out -1.5s infinite reverse;
+}
+
+.doom-video a:hover img {
+	transform: rotate(-3deg) scale(1.08);
+	filter: saturate(1.8) drop-shadow(8px 8px 0 #d1342d);
 }
 
 .doom-body > nav {
@@ -172,18 +252,134 @@
 	align-items: center;
 	margin-left: auto;
 	margin-right: auto;
-	column-gap: 16px;
+	gap: 16px;
+	flex-wrap: wrap;
+	position: relative;
+	z-index: 22;
 }
 
 .doom-body > nav > a {
 	color: yellow;
 	font-size: 20px;
+	text-transform: uppercase;
+	text-decoration-thickness: 3px;
+	text-shadow: 2px 2px #7b1612;
+	transition: transform 100ms steps(2, end);
 }
 
 .doom-body > nav > a:hover {
 	color: rgb(209, 52, 45);
+	transform: skewX(-8deg) translateY(-2px);
 }
 
 .doom-body > nav > a:active {
 	color: rgb(209, 52, 45);
+}
+
+@keyframes logo-pulse {
+	0%, 100% { transform: scale(1) rotate(-0.2deg); }
+	50% { transform: scale(1.018) rotate(0.2deg); }
+}
+
+@keyframes demon-float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-7px); }
+}
+
+@keyframes card-glitch {
+	0% { transform: translate(0, 0) skewX(0); }
+	33% { transform: translate(-3px, 1px) skewX(-1deg); }
+	66% { transform: translate(3px, -1px) skewX(1deg); }
+}
+
+@keyframes skull-blink {
+	0%, 70%, 100% { opacity: 1; }
+	71%, 82% { opacity: 0.2; }
+}
+
+@keyframes border-flicker {
+	0%, 94%, 100% { border-color: yellow; }
+	95% { border-color: #ff5a22; }
+	97% { border-color: #fff6a0; }
+}
+
+@keyframes relic-wobble {
+	0%, 100% { transform: rotate(-1.5deg) translateY(0); }
+	50% { transform: rotate(1.5deg) translateY(-5px); }
+}
+
+@media (max-width: 800px) {
+	.doom-facts {
+		grid-template-columns: 1fr;
+	}
+
+	.doom-facts article {
+		display: grid;
+		grid-template-columns: minmax(120px, 0.8fr) minmax(0, 1.2fr);
+		column-gap: 16px;
+		align-items: start;
+	}
+
+	.doom-facts article img {
+		grid-row: 1 / span 2;
+		height: 100%;
+		min-height: 170px;
+	}
+
+	.doom-facts article h2,
+	.doom-facts article p {
+		margin-top: 0;
+	}
+
+	.doom-video {
+		grid-template-columns: 1fr;
+	}
+
+}
+
+@media (max-width: 520px) {
+	.doom-body {
+		padding: 12px 12px 90px;
+		background-size: 70px;
+	}
+
+	.doom-description,
+	.doom-facts article,
+	.doom-video > iframe {
+		border-width: 6px;
+	}
+
+	.doom-facts article {
+		display: block;
+	}
+
+	.doom-facts article img {
+		height: 190px;
+		min-height: 0;
+		margin-bottom: 16px;
+	}
+
+	.doom-video > div > div {
+		padding: 0 !important;
+	}
+
+	.doom-video a img {
+		height: 120px;
+	}
+
+	.hand_image {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.doom-body,
+	.doom-body::after,
+	.doom-h1-img,
+	.doom-description,
+	.doom-facts article,
+	.doom-facts article::before,
+	.doom-video a img {
+		animation: none;
+	}
 }

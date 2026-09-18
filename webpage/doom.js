@@ -6,11 +6,13 @@ doomMusic.volume = 0.5;
 doomGun.volume = 1.0;
 
 window.addEventListener('mousemove', (event) => {
+	if (!hand) return;
 	hand.style.left = `${event.clientX - 25}px`;
 	hand.style.top = `${event.clientY + 100}px`;
 });
 
 window.addEventListener('mouseup', async () => {
+	if (!hand || !doomMusic || !doomGun) return;
 	hand.src = "./images/hand_shoot.png";
 	doomGun.currentTime = 0;
 	await doomGun.play().catch(() => {});
