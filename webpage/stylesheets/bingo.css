@@ -1,3 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.geist-pixel-fein,
+nav ul li,
+h1 {
+    font-family: "Geist Pixel", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "ELSH" 0;
+}
+
+h1 span {
+    color: red;
+    position: relative;
+}
+
+h1 span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: yellow;
+    left: 0;
+    bottom: 0;
+    z-index: -10;
+}
+
 body {
-  background-color: coral;
+    background-color: white;
+}
+
+nav {
+    width: 100%;
+    border-bottom: 1.5px solid black;
+    padding: 4px 1rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li {
+    list-style: none;
+    height: 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: gray;
+}
+
+nav ul li img {
+    width: 20px;
+}
+
+main {
+    width: 60dvw;
+    margin: 4rem auto;
 }
