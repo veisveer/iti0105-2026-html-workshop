@@ -3,96 +3,116 @@
   <head lang="et">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avaleht</title>
+    <title>DOOM 1993</title>
     <link rel="stylesheet" href="./stylesheets/index.css" />
+    <link rel="stylesheet" href="./stylesheets/doom.css" />
   </head>
-  <body>
+  <body class="doom-body">
     <!-- Navigatsiooniriba -->
     <nav>
-      <ul>
-        <li><a href="index.html"> Avaleht </a></li>
-        <li><a href="bingo.html">Bingo</a></li>
-        <li><a href="team.html"> Tiim </a></li>
-      </ul>
+      <a href="bingo.html">Bingo</a>
+      <a href="team.html">Tiim</a>
     </nav>
     <!-- Nimetus -->
     <section>
       <div>
-        <h1>Nimetus</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu nisi
-          fermentum, tempus nibh ut, interdum purus. Sed eget lacus sit amet
-          orci vulputate tincidunt. Proin rutrum urna tortor, eu efficitur
-          turpis malesuada vitae. Phasellus facilisis elit eu nisi cursus,
-          ultricies sodales lectus euismod. Aliquam et nunc eu odio varius
-          tincidunt. Morbi vel laoreet lectus. Sed ligula urna, bibendum sit
-          amet lorem eget, porttitor bibendum enim. In id velit et ligula
-          pharetra lacinia. Vestibulum eu ultricies erat.
+        <h1 class="doom-h1">
+          <a href="https://fontmeme.com/doom-font/">
+        <img src="https://fontmeme.com/permalink/260918/0235e575.png" alt="Doom" class="doom-h1-img" />
+          </a>
+        </h1>
+<!--        <img src="./images/doomguy.gif" />-->
+        <p class="doom-description">
+          Doom is a 1993 first-person shooter game developed and published by id Software for MS-DOS. It is the first installment in the Doom franchise. The player assumes the role of a space marine, later unofficially referred to as Doomguy, fighting through hordes of undead humans and invading demons. The game begins on the moons of Mars and finishes in hell, with the player traversing each level to find its exit or defeat its final boss. It is an early example of 3D graphics in video games, and has enemies and objects as 2D images, a technique sometimes referred to as 2.5D graphics.
         </p>
       </div>
-      <img src="./images/img.png" />
     </section>
     <!-- Faktide kaardid -->
-    <section>
+    <section class="doom-facts">
       <article>
-        <img />
-        <h2>Kas teadsid, et ...</h2>
+        <img src="images/fast.gif" alt="Doomguy running through a level" />
+        <h2>50-90MPH</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu nisi
-          fermentum, tempus nibh ut, interdum purus. Sed eget lacus sit amet
-          orci vulputate tincidunt. Proin rutrum urna tortor, eu efficitur
-          turpis malesuada vitae. Phasellus facilisis elit eu nisi cursus,
-          ultricies sodales lectus euismod
+          Doom Guy runs approximately 50-90MPH in the classic games.
         </p>
       </article>
       <article>
-        <img />
-        <h2>Kas teadsid, et ...</h2>
+        <img src="images/greenandpissed.gif" alt="Doom gameplay" />
+        <h2>Green and Pissed</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu nisi
-          fermentum, tempus nibh ut, interdum purus. Sed eget lacus sit amet
-          orci vulputate tincidunt. Proin rutrum urna tortor, eu efficitur
-          turpis malesuada vitae. Phasellus facilisis elit eu nisi cursus,
-          ultricies sodales lectus euismod
+          The working title for the original was “Green and Pissed” and you used to be able to find Usenet posts from the crew referring to the game as that around late 1992 / early 1993.
         </p>
       </article>
       <article>
-        <img />
-        <h2>Kas teadsid, et ...</h2>
+        <img src="images/evildead.gif" alt="The Evil Dead" />
+        <h2>Evil Dead</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu nisi
-          fermentum, tempus nibh ut, interdum purus. Sed eget lacus sit amet
-          orci vulputate tincidunt. Proin rutrum urna tortor, eu efficitur
-          turpis malesuada vitae. Phasellus facilisis elit eu nisi cursus,
-          ultricies sodales lectus euismod
+          The chainsaw and super shotgun weapons in the game were inspired by the Evil Dead series of movies.
         </p>
       </article>
     </section>
+    <!-- Episode map -->
+    <section class="doom-map" aria-labelledby="map-title">
+      <header class="doom-map__header">
+        <div>
+          <span>EPISODE 1</span>
+          <h2 id="map-title">KNEE-DEEP IN THE DEAD</h2>
+        </div>
+        <p>PHOBOS // ROUTE MAP</p>
+      </header>
+      <ol class="doom-map__route" aria-label="Episode one level route">
+        <li class="map-node map-node--1"><b>E1M1</b><small>Hangar</small></li>
+        <li class="map-node map-node--2"><b>E1M2</b><small>Nuclear Plant</small></li>
+        <li class="map-node map-node--3"><b>E1M3</b><small>Toxin Refinery</small></li>
+        <li class="map-node map-node--secret"><b>E1M9</b><small>Military Base</small></li>
+        <li class="map-node map-node--4"><b>E1M4</b><small>Command Control</small></li>
+        <li class="map-node map-node--5"><b>E1M5</b><small>Phobos Lab</small></li>
+        <li class="map-node map-node--6"><b>E1M6</b><small>Central Processing</small></li>
+        <li class="map-node map-node--7"><b>E1M7</b><small>Computer Station</small></li>
+        <li class="map-node map-node--8"><b>E1M8</b><small>Phobos Anomaly</small></li>
+      </ol>
+      <div class="doom-map__legend">
+        <span><i class="legend-dot legend-dot--start"></i> START</span>
+        <span><i class="legend-dot legend-dot--secret"></i> SECRET</span>
+        <span><i class="legend-dot legend-dot--boss"></i> ANOMALY</span>
+      </div>
+    </section>
     <!-- Video -->
-    <section>
+    <section class="doom-video">
       <iframe
-        src="https://www.youtube.com/embed/IxX_QHay02M?si=eOf_xVylMgon2HdF"
-        title="YouTube video player"
+        src="https://youtube.com/embed/MnqLJpgq7jc"
+        title="DOOM E1M1"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
+        style=""
       ></iframe>
-    </section>
-    <!-- Lisainfo -->
-    <section>
-      <h2>Lisainfo</h2>
       <div>
-        <a href="https://et.wikipedia.org/wiki/Vikipeedia:Esileht"
-          ><img src="./images/world-wide-web.png"
-        /></a>
-        <a href="https://et.wikipedia.org/wiki/Vikipeedia:Esileht"
-          ><img src="./images/world-wide-web.png"
-        /></a>
-        <a href="https://et.wikipedia.org/wiki/Vikipeedia:Esileht"
-          ><img src="./images/world-wide-web.png"
-        /></a>
+        <div style="padding: 16px">
+          <a href="https://en.wikipedia.org/wiki/Doom_(1993_video_game)"
+          ><img src="./images/coverart.jpg" alt="Doom cover art"
+          /></a>
+          <a href="https://doom.fandom.com/wiki/Doom_Wiki"
+          ><img src="./images/cacodemon.webp" alt="Cacodemon"
+          /></a>
+          <a href="https://doomwiki.org/wiki/Doom"
+          ><img src="./images/marine.webp" alt="Doom marine"
+          /></a>
+        </div>
       </div>
     </section>
+
+    <div class="hand-fixed">
+        <!-- static hand image on the bottom of the page always -->
+        <img src="./images/hand.png" alt="hand" class="hand_image"/>
+    </div>
+    <div class="doom-fixed">
+      <!-- static doom image on the bottom of the page always -->
+      <img src="./images/doom.png" alt="doom" class="doom_image"/>
+    </div>
+    <audio id="doom-music" src="./images/music.mp3" preload="auto" loop></audio>
+    <audio id="doom-gun" src="./images/doom-gun.mp3" preload="auto"></audio>
+    <script type="text/javascript" src="./doom.js"></script>
   </body>
 </html>
