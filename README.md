@@ -1,14 +1,10 @@
-# Nelijärve HTML töötuba (kuupäev)
+# Nelijärve HTML töötuba 18. sept 2026
 
-Tiimi nimi:
+Tiimi nimi: 14
 
-Tiimi kooseis:
+Tiimi kooseis: Renee, Lukas, Fred
 
-Link lehele: 
-
-Kuidas antud mall välja näeb? [https://nelijarve-workshop-iti0105-2026-366393bd8911bbf4ec1566f78f3c741.pages.taltech.ee](https://nelijarve-workshop-iti0105-2026-366393bd8911bbf4ec1566f78f3c741.pages.taltech.ee)
-
-Abistav [video](https://www.youtube.com/watch?v=r_qAqBLk8tE)
+Link lehele: https://nelijarve-workshop-493f90.pages.taltech.ee/
 
 ## Mis on töötoa eesmärk?
 
